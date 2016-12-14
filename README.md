@@ -4,12 +4,16 @@
 <img src="http://www.javatpoint.com/images/javascript/javascript_logo.png" width="300" height="200">
 </p>
 
-### Integrantes : Castillo Christian y Quito Audita
+### Integrantes : 
 
-### Descripcion : El presente proyecto tiene como objetivo desarrollar un página web para que una persona elegir entre varias una mascota de acuerdo a sus gustos. Además puede realizar donaciones monetarias, alimentos o cualquier otro tipo.
+Castillo Christian
+Quito Audita
 
-<p><b>Ejemplo:</b></p><p><a href="https://app.moqups.com/auditaquito@gmail.com/LoKUNpVQxh/view/page/aea65e622" target="_blank">
-<img src="https://github.com/Audita/ProyectoFinalJavascript/blob/master/Imagenes/paginaweb.png" alt="mockup-web-dexler.jpg"></a>
+### Descripcion : 
+El presente proyecto tiene como objetivo desarrollar un página web para que una persona elegir entre varias una mascota de acuerdo a sus gustos. Además puede realizar donaciones monetarias, alimentos o cualquier otro tipo.
+
+<p><b>Maqueta:</b></p><p><a href="https://app.moqups.com/auditaquito@gmail.com/LoKUNpVQxh/view/page/aea65e622" target="_blank">
+<img src="https://github.com/Audita/ProyectoFinalJavascript/blob/master/Imagenes/paginaweb.png" alt="mockup-web-dexler.jpg" align="center"></a>
 
 <br></p>
 
