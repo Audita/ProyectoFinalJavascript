@@ -11,6 +11,7 @@ import { MascotaComponent } from './mascota/mascota.component';
 import { PersonaComponent } from './persona/persona.component';
 import {MasterURLService} from "./service/master-url.service";
 import {routing} from "./app.routes";
+import { ListarComponent } from './donacion/listar/listar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {routing} from "./app.routes";
     AdopcionComponent,
     DonacionComponent,
     MascotaComponent,
-    PersonaComponent
+    PersonaComponent,
+    ListarComponent
   ],
   imports: [
     BrowserModule,

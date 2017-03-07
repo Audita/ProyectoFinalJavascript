@@ -5,6 +5,7 @@ import {PersonaComponent} from "./persona/persona.component";
 import {AdopcionComponent} from "./adopcion/adopcion.component";
 import {DonacionComponent} from "./donacion/donacion.component";
 import {MascotaComponent} from "./mascota/mascota.component";
+import {ListarComponent} from "./donacion/listar/listar.component";
 /**
  * Created by Christian on 04/03/2017.
  */
@@ -16,7 +17,8 @@ export const routes: Routes = [
   //{path: 'mascota/:idPersona/album', component:
  // AdopcionComponent},
   {path:'donacion',component: DonacionComponent},
-  {path:'mascota',component: MascotaComponent}
+  {path:'mascota',component: MascotaComponent},
+  {path:'listar',component: ListarComponent}
   //{path: 'artista/:idArtista/album', component: AlbumComponent,
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
