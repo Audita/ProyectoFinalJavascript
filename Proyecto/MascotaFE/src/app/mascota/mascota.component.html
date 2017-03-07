@@ -3,42 +3,106 @@
 <h1>{{title}}</h1>
 <h2>{{error}}</h2>
 <!--{{nuevaMascota |json}}-->
-<!--Crear Persona-->
+<!--Crear Mascota-->
 <div class="row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
-    <form class="animated bounceIn" (ngSubmit)="crearMascota(NuevaMascotaForm)" #NuevaMascotaForm="ngForm">
-      <div class="form-group">
-        <label>Nombre</label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-          <input required
-                 name="nombre"
-                 minlength="4"
-                 type="text"
-                 id="nombre"
-                 class="form-control"
-                 placeholder="Ingrese su nombre"
-                 #nombre="ngModel"
-                 [(ngModel)]="nuevaMascota.nombre"
-                 #nombreElm>
-        </div>
+  <!--<div class="col-sm-3"></div>-->
+  <div class="col-md-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-6">
+      <div class="col-sm-6">
+        <form class="animated bounceIn" (ngSubmit)="crearMascota(NuevaMascotaForm)" #NuevaMascotaForm="ngForm">
+          <div class="form-group">
+            <label>Nombre</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <input required
+                     name="nombre"
+                     minlength="4"
+                     type="text"
+                     id="nombre"
+                     class="form-control"
+                     placeholder="Ingrese su nombre"
+                     #nombre="ngModel"
+                     [(ngModel)]="nuevaMascota.nombre"
+                     #nombreElm>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Edad</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <input required
+                     name="edad"
+                     minlength="4"
+                     type="number"
+                     id="edad"
+                     class="form-control"
+                     #nombre="ngModel"
+                     [(ngModel)]="nuevaMascota.edad"
+                     #nombreElm>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Tipo</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <input required
+                     name="tipo"
+                     minlength="4"
+                     type="text"
+                     id="tipo"
+                     class="form-control"
+                     placeholder="Ingrese su nombre"
+                     #nombre="ngModel"
+                     [(ngModel)]="nuevaMascota.tipo"
+                     #nombreElm>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Genero</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <input required
+                     name="genero"
+                     minlength="4"
+                     type="text"
+                     id="genero"
+                     class="form-control"
+                     placeholder="Ingrese su nombre"
+                     #nombre="ngModel"
+                     [(ngModel)]="nuevaMascota.genero"
+                     #nombreElm>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tamaño</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <input required
+                     name="tamanio"
+                     minlength="4"
+                     type="text"
+                     id="tamanio"
+                     class="form-control"
+                     placeholder="Ingrese su nombre"
+                     #nombre="ngModel"
+                     [(ngModel)]="nuevaMascota.tamanio"
+                     #nombreElm>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-4">
+            <button [disabled]="disabledButtons.NuevaMascotaFormSumitButton||!NuevaMascotaForm.valid" type="submit"
+                    class="btn btn-block btn-success btn-lg">
+              <span class="glyphicon glyphicon-ok"></span> Crear
+            </button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label>Edad</label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-          <input required
-                 name="edad"
-                 minlength="4"
-                 type="number"
-                 id="edad"
-                 class="form-control"
-                 #nombre="ngModel"
-                 [(ngModel)]="nuevaMascota.edad"
-                 #nombreElm>
-        </div>
-      </div>
+    </div>
+    <div class="col-sm3"></div>
+    <div class="col sm-6">
       <div class="form-group">
         <label>Foto</label>
         <label class="uploader" ondragover="return false;"
@@ -59,73 +123,9 @@
           <input type="file" name="file" accept="image/*"
                  (change)="handleInputChange($event)">
         </label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-          <input
-                 name="foto"
-                 type="image"
-                 id="foto"
-                 class="form-control"
-                 #nombre="ngModel"
-                 [(ngModel)]="nuevaMascota.foto"
-                 #nombreElm>
-        </div>
       </div>
-      <div class="form-group">
-        <label>Tipo</label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-          <input required
-                 name="tipo"
-                 minlength="4"
-                 type="text"
-                 id="tipo"
-                 class="form-control"
-                 placeholder="Ingrese su nombre"
-                 #nombre="ngModel"
-                 [(ngModel)]="nuevaMascota.tipo"
-                 #nombreElm>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Genero</label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-          <input required
-                 name="genero"
-                 minlength="4"
-                 type="text"
-                 id="genero"
-                 class="form-control"
-                 placeholder="Ingrese su nombre"
-                 #nombre="ngModel"
-                 [(ngModel)]="nuevaMascota.genero"
-                 #nombreElm>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Tamaño</label>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-          <input required
-                 name="tamanio"
-                 minlength="4"
-                 type="text"
-                 id="tamanio"
-                 class="form-control"
-                 placeholder="Ingrese su nombre"
-                 #nombre="ngModel"
-                 [(ngModel)]="nuevaMascota.tamanio"
-                 #nombreElm>
-        </div>
-      </div>
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <button [disabled]="disabledButtons.NuevaMascotaFormSumitButton||!NuevaMascotaForm.valid" type="submit"
-                class="btn btn-block btn-success btn-lg">
-          <span class="glyphicon glyphicon-ok"></span> Crear
-        </button>
-      </div>
-    </form>
+
+    </div>
   </div>
+
 </div>

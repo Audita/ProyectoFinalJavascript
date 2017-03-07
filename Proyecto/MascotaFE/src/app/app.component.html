@@ -15,9 +15,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-
-        <li>
-          <a [routerLink]="['/adopcion']">
+        <li *ngIf="!disabled">
+          <a routerLink="donacion" [routerLinkActive]="['active']">
+            Donacion
+          </a>
+        </li>
+        <li routerLinkActive="true">
+          <a [routerLink]="['adopcion']">
             Adocion
           </a>
         </li>

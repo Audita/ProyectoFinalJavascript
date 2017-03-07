@@ -13,9 +13,10 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path:'persona', component: PersonaComponent },
   {path:'adopcion',component: AdopcionComponent},
-  {path: 'mascota/:idPersona/album', component: AdopcionComponent},
-  //{path: 'artista/:idArtista/album', component: AlbumComponent,
+  //{path: 'mascota/:idPersona/album', component:
+ // AdopcionComponent},
   {path:'donacion',component: DonacionComponent},
   {path:'mascota',component: MascotaComponent}
+  //{path: 'artista/:idArtista/album', component: AlbumComponent,
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

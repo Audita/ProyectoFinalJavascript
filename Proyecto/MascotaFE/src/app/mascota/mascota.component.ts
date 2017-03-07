@@ -12,10 +12,10 @@ import {NgForm} from "@angular/forms";
 export class MascotaComponent implements OnInit {
   title: string = "Ingresa tu información";
   nuevaMascota= {};
-  personas = [];
+  mascotas = [];
   disabledButtons = {
     NuevaMascotaFormSumitButton: false
-  }
+  };
   activeColor: string = 'green';
   baseColor: string = '#ccc';
   overlayColor: string = 'rgba(255,255,255,0.5)';
@@ -102,7 +102,7 @@ export class MascotaComponent implements OnInit {
       (res) => {
         console.log("No existieron errores");
         console.log(res);
-        this.personas.push(res.json());
+        this.mascotas.push(res.json());
         this.nuevaMascota = {};
         this.disabledButtons.NuevaMascotaFormSumitButton = false;
       },
