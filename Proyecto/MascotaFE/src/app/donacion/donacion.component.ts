@@ -13,6 +13,7 @@ export class DonacionComponent implements OnInit {
   title: string = "Donaciones";
   nuevaDonacion = {};
   donaciones = [];
+  personas = [];
   disabledButtons = {
     NuevaDonacionFormSubmitButton: false
   };
@@ -33,13 +34,29 @@ export class DonacionComponent implements OnInit {
         (err) => {
           console.log(err);
         }
-      )
+      );
+    this._http.get(this._masterURL.url + "Persona")
+      .subscribe(
+        (res: Response) => {
+          this.personas = res.json()
+            .map((value) => {
+              value.formularioCerrado = true;
+              return value;
+            });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+
+
   }
 
   crearDonacion(formulario:NgForm) {
     this.disabledButtons.NuevaDonacionFormSubmitButton = true;
     this._http.post(this._masterURL.url + "Donacion", {
-      nombre: formulario.value.cantidad
+      cantidad: formulario.value.cantidad,
+      idPersona: formulario.value.idPersona
     }).subscribe(
       (res) => {
         console.log("No hubo Errores");
