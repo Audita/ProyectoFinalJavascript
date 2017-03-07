@@ -38,7 +38,7 @@
                  type="number"
                  id="cantidad"
                  class="form-control"
-                 placeholder="Ingrese su nombre"
+                 placeholder="Ingrese la cantidad a donar"
                  #cantidad="ngModel"
                  [(ngModel)]="nuevaDonacion.cantidad"
                  #nombreElm>
@@ -49,7 +49,7 @@
       <div class="col-sm-4">
         <button [disabled]="disabledButtons.NuevaDonacionFormSumitButton||!NuevaDonacionForm.valid" type="submit"
                 class="btn btn-block btn-success btn-lg">
-          <span class="glyphicon glyphicon-ok"></span> Crear
+          <span class="glyphicon glyphicon-ok"></span> Donar
         </button>
       </div>
     </form>

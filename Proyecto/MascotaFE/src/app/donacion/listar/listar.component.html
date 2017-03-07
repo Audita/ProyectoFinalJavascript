@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<h2 class="animated bounce">{{title}}</h2>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="form-group col-sm-6 animated bounce">
+    <label>Seleccione la Persona</label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <select class="form-control" [ngModel]="selectedDevice" (ngModelChange)="onChange($event)">
+        <option *ngFor="let persona of personas" value="{{persona.id}}"  >{{persona.nombre}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="animated bounceIn" *ngFor="let donacion of donaciones">
+    <div class="col-md-12">
+      <div class="text-center ma-borde ma-padding-top-bottom">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <p><strong>Cantidad Donada $: </strong>{{donacion.cantidad}}</p>
+          <p><strong>fecha: </strong>{{donacion.createdAt | date}}</p>
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-danger btn-group-lg" (click)="borrarDonacion(donacion.id)"><span
+            class="glyphicon glyphicon-remove"></span> Borrar
+          </button>
+        </div>
+        <br>
+        <br>
+      </div>
+      <div class="row" [hidden]="!donacion.formularioCerrado">
+      </div>
+
+    </div>
+  </div>
+</div>
