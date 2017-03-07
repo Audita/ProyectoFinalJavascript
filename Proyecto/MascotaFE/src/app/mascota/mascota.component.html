@@ -7,7 +7,7 @@
 <div class="row">
   <!--<div class="col-sm-3"></div>-->
   <div class="col-md-12">
-    <div class="col-sm-1"></div>
+    <div class="col-sm-2"></div>
     <div class="col-sm-6">
       <div class="col-sm-6">
         <form class="animated bounceIn" (ngSubmit)="crearMascota(NuevaMascotaForm)" #NuevaMascotaForm="ngForm">
@@ -47,47 +47,54 @@
             <label>Tipo</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-              <input required
-                     name="tipo"
-                     minlength="4"
-                     type="text"
-                     id="tipo"
-                     class="form-control"
-                     placeholder="Ingrese su nombre"
-                     #nombre="ngModel"
-                     [(ngModel)]="nuevaMascota.tipo"
-                     #nombreElm>
+              <select required
+                      class="form-control"
+                      name="tipo"
+                      [(ngModel)]="nuevaMascota.tipo"
+                      #posicion="ngModel">
+                <option *ngFor="let tamanio of tipos" value="{{tamanio.tipo}}">{{tamanio.tipo}}</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
             <label>Genero</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-              <input required
-                     name="genero"
-                     minlength="4"
-                     type="text"
-                     id="genero"
-                     class="form-control"
-                     placeholder="Ingrese su nombre"
-                     #nombre="ngModel"
-                     [(ngModel)]="nuevaMascota.genero"
-                     #nombreElm>
+              <select required
+                      class="form-control"
+                      name="genero"
+                      [(ngModel)]="nuevaMascota.genero"
+                      #posicion="ngModel">
+                <option *ngFor="let genero of generos" value="{{genero.genero}}">{{genero.genero}}</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
             <label>Tamaño</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <select required
+                      class="form-control"
+                      name="tamanio"
+                      [(ngModel)]="nuevaMascota.tamanio"
+                      #posicion="ngModel">
+                <option *ngFor="let tamanio of tamanios" value="{{tamanio.tipo}}">{{tamanio.tipo}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Imagen</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
               <input required
-                     name="tamanio"
+                     name="foto"
                      minlength="4"
                      type="text"
-                     id="tamanio"
+                     id="foto"
                      class="form-control"
                      placeholder="Ingrese su nombre"
                      #nombre="ngModel"
-                     [(ngModel)]="nuevaMascota.tamanio"
+                     [(ngModel)]="nuevaMascota.foto"
                      #nombreElm>
             </div>
           </div>
@@ -101,31 +108,26 @@
         </form>
       </div>
     </div>
-    <div class="col-sm3"></div>
     <div class="col sm-6">
-      <div class="form-group">
-        <label>Foto</label>
-        <label class="uploader" ondragover="return false;"
-               [class.loaded]="loaded"
-               [style.outlineColor]="dragging ? activeColor : baseColor"
-               (dragenter)="handleDragEnter()"
-               (dragleave)="handleDragLeave()"
-               (drop)="handleDrop($event)">
 
-          <i class="icon icon-upload"
-             [style.color]="dragging
-            ? ((imageSrc.length > 0) ? overlayColor : activeColor)
-            : ((imageSrc.length > 0) ? overlayColor : baseColor)"></i>
-          <img
-            [src]="imageSrc"
-            (load)="handleImageLoad()"
-            [class.loaded]="imageLoaded"/>
-          <input type="file" name="file" accept="image/*"
-                 (change)="handleInputChange($event)">
-        </label>
-      </div>
 
     </div>
   </div>
 
+</div>
+
+<h2>{{subtitle}}</h2>
+<div class="row">
+  <div class="col-sm-4 animated bounceIn" *ngFor="let Mascota of mascotas">
+    <div class="col-md-7">
+      <div class="text-center ma-borde ma-padding-top-bottom">
+        <img [src]="Mascota.foto" height="200" />
+        <h3>{{Mascota.nombre}}</h3>
+        <p><strong>Tipo:</strong><br>{{Mascota.tipo}}<br>
+          <strong>Edad:</strong><br>{{Mascota.edad}}<br>
+        <strong>Genero:</strong><br>{{Mascota.genero}}</p>
+        <br>
+      </div>
+        </div>
+  </div>
 </div>
