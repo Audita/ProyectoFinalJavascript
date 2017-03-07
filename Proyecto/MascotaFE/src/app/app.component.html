@@ -22,20 +22,45 @@
           </a>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">¿Ya tienes una cuenta?</p></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+                  <form role="form" (submit)="login($event, username.value, password.value)" id="login-nav">
+                    <div class="form-group">
+                      <label class="sr-only" for="username">Alias</label>
+                      <input type="text" #username class="form-control" id="username" placeholder="alias">
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="password">Contraseña</label>
+                      <input type="password" #password class="form-control" id="password" placeholder="Password">
+                      <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                    </div>
+                    <div class="form-group">
+
+                      <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                    </div>
+                    <div class="checkbox">
+                    </div>
+                  </form>
+                </div>
+                <div class="bottom text-center">
+                  Eres nuevo ?  <a [routerLink]="['/persona']">
+                  <b>Registrate</b>
+                </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container -->
 </nav>
-<!--
-<div class="container">
-  <div class="jumbotron">
-    <h1>Bootstrap Tutorial</h1>
-    <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing
-      responsive, mobile-first projects on the web.</p>
-  </div>
-  <p>This is some text.</p>
-  <p>This is another text.</p>
-</div>
--->
 <router-outlet></router-outlet>

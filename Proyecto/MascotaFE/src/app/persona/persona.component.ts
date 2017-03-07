@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MasterURLService} from "../service/master-url.service";
 import {Http} from "@angular/http";
 import {NgForm} from "@angular/forms";
+import {Md5} from 'ts-md5/dist/md5';
+//import {md5} from './ts-md5/dist/md5';
 
 @Component({
   selector: 'app-persona',
@@ -31,7 +33,7 @@ export class PersonaComponent implements OnInit {
       direccion: formulario.value.direccion,
       telefono: formulario.value.telefono,
       correo: formulario.value.correo,
-      password: formulario.value.password
+      password: Md5.hashStr(formulario.value.password)
     }).subscribe(
       (res) => {
         console.log("No existieron errores");
