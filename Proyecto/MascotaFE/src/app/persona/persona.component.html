@@ -1,0 +1,116 @@
+<br>
+<br>
+<h1>{{title}}</h1>
+<h2>{{error}}</h2>
+<!--{{nuevaPersona |json}}-->
+<!--Crear Persona-->
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <form class="animated bounceIn" (ngSubmit)="crearPersona(NuevaPersonaForm)" #NuevaPersonaForm="ngForm">
+      <div class="form-group">
+        <label>Nombre</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+          <input required
+                 name="nombre"
+                 minlength="4"
+                 type="text"
+                 id="nombre"
+                 class="form-control"
+                 placeholder="Ingrese su nombre"
+                 #nombre="ngModel"
+                 [(ngModel)]="nuevaPersona.nombre"
+                 #nombreElm>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Alias</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+          <input required
+                 name="alias"
+                 minlength="4"
+                 type="text"
+                 id="alias"
+                 class="form-control"
+                 placeholder="Ingrese su nombre"
+                 #nombre="ngModel"
+                 [(ngModel)]="nuevaPersona.alias"
+                 #nombreElm>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Direción</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+          <input required
+                 name="direccion"
+                 minlength="4"
+                 type="text"
+                 id="direccion"
+                 class="form-control"
+                 placeholder="Ingrese su nombre"
+                 #nombre="ngModel"
+                 [(ngModel)]="nuevaPersona.direccion"
+                 #nombreElm>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Telefono</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+          <input required
+                 name="telefono"
+                 minlength="4"
+                 type="number"
+                 id="telefono"
+                 class="form-control"
+                 placeholder="Ingrese su nombre"
+                 #nombre="ngModel"
+                 [(ngModel)]="nuevaPersona.telefono"
+                 #nombreElm>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Correo</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+          <input required
+                 name="correo"
+                 minlength="4"
+                 type="email"
+                 id="correo"
+                 class="form-control"
+                 placeholder="Ingrese su nombre"
+                 #nombre="ngModel"
+                 [(ngModel)]="nuevaPersona.correo"
+                 #nombreElm>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+          <input required
+                 name="password"
+                 minlength="4"
+                 type="password"
+                 id="password"
+                 class="form-control"
+                 placeholder="Ingrese su nombre"
+                 #nombre="ngModel"
+                 [(ngModel)]="nuevaPersona.password"
+                 #nombreElm>
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <button [disabled]="disabledButtons.NuevaPersonaFormSumitButton||!NuevaPersonaForm.valid" type="submit"
+                class="btn btn-block btn-success btn-lg">
+          <span class="glyphicon glyphicon-ok"></span> Crear
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
