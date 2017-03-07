@@ -1,3 +1,39 @@
-<p>
-  donacion works!
-</p>
+<div class="page-header" >
+  <h1 align="center">Donaciones</h1>
+</div>
+
+<h1>{{title}}</h1>
+<h2>{{error}}</h2>
+<!--{{nuevaPersona |json}}-->
+<!--Crear Persona-->
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <form class="animated bounceIn" (ngSubmit)="crearDonacion(NuevaDonacionForm)" #NuevaDonacionForm="ngForm">
+      <div class="form-group">
+        <label>Donacion</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+          <input required
+                 name="cantidad"
+                 minlength="4"
+                 type="number"
+                 id="cantidad"
+                 class="form-control"
+                 placeholder="Ingrese su nombre"
+                 #nombre="ngModel"
+                 [(ngModel)]="nuevaDonacion.cantidad"
+                 #nombreElm>
+        </div>
+      </div>
+
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <button [disabled]="disabledButtons.NuevaDonacionFormSumitButton||!NuevaDonacionForm.valid" type="submit"
+                class="btn btn-block btn-success btn-lg">
+          <span class="glyphicon glyphicon-ok"></span> Crear
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
